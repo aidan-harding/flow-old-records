@@ -37,7 +37,7 @@ stored in a static variable so that it is available later in the transaction.
 
 The InvocableMethod simply returns results from the map.
 
-## Can I Save The Query In Before-Save Flows?
+## Can I Use This In Before-Save Flows?
 
 No - the [order of execution](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_order_of_execution.htm)
 tells us that before-save Flows run before Apex, so you'll still need to query the records in the Flow. 

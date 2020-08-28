@@ -32,9 +32,10 @@ adding a trivial handler trigger like [AccountTrigger](force-app/main/default/tr
 (which may already exist if there is other Apex) and a [metadata record](force-app/main/default/customMetadata/nebc__Trigger_Handler.AccountFlowOldRecordsBU.md-meta.xml).
 
 The actual implementation in [FlowOlderRecords](force-app/main/default/classes/FlowOldRecords.cls) and very 
-straightforward. It simply builds up a map of `SObjectType` to `Map<Id, SObject>` containing the old records.
+straightforward. It simply builds up a map of `SObjectType` to `Map<Id, SObject>` containing the old records. This is 
+stored in a static variable so that it is available later in the transaction.
 
-The InvocableMethod simply returns results from the map
+The InvocableMethod simply returns results from the map.
 
 ## So, Should I Do This?
 
